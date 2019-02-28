@@ -17,9 +17,10 @@ RUN unzip ijava-kernel.zip -d ijava-kernel \
   && python3 install.py --sys-prefix
 
 #Set up nbextensions
-RUN jupyter-nbextension install rise --py --sys-prefix
-RUN jupyter-nbextension enable rise --py --sys-prefix
-RUN jupyter contrib nbextension install --user
+RUN jupyter-nbextension install rise --py --system
+RUN jupyter-nbextension enable rise --py --system
+RUN jupyter contrib nbextension install --system
+RUN jupyter nbextension enable hide_input/main
 
 # Set up the user environment
 
